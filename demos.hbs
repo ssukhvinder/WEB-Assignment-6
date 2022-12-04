@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Products</h2>
+        <hr />
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Title</th>
+                        <th>Product Date</th>
+                        <th>Category</th>
+                        <th>Published</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each Products}}
+                    <tr>
+                        <td>{{this.id}}</td>
+                        <td>{{this.title}}</td>
+                        <td>{{this.ProductDate}}</td>
+                        <td>{{this.category}}</td>
+                        <td>{{this.published}}</td>
+                     <td><a href="/demos/delete/{{:id}}" class="btn btn-danger">remove</a></td>
+                    </tr>
+                     {{else}}
+                        <tr>
+                            <td >
+                                  <strong>{{message}}</strong>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{#unless Products}}
+    <div class="col-md-12 text-center">
+        <strong>{{message}}</strong> 
+    </div>
+    {{/unless}}
+</div>
+
+
+    </body>
+</html>
